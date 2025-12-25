@@ -101,7 +101,7 @@ bool bool_false = false;
     if (_eventSink == nil) {
       result(@{ @"code": @"500001", @"msg": @"请先对插件进行监听！" });
     } else {
-      [self initSdk];
+        [self initSdk: result];
     }
   }
   // 延时登录获取非延时登录
@@ -154,10 +154,11 @@ bool bool_false = false;
 }
 
 #pragma mark - 初始化SDK以及相关布局
-- (void)initSdk {
+- (void)initSdk:(FlutterResult)result {
   NSDictionary *dic = _callData.arguments;
   // _model = [TXCustomModel mj_objectWithKeyValues: dic];
   if ([[dic stringValueForKey: @"iosSk" defaultValue: @""] isEqualToString:@""]) {
+      result(@(bool_false);
     NSDictionary *dict = @{ @"resultCode": @"500000" };
     [self showResult: dict];
   }
@@ -170,6 +171,7 @@ bool bool_false = false;
       //2. 调用check接口检查及准备接口调用环境
       [[TXCommonHandler sharedInstance] checkEnvAvailableWithAuthType:PNSAuthTypeLoginToken complete:^(NSDictionary * _Nullable checkDic) {
         if ([PNSCodeSuccess isEqualToString:[checkDic objectForKey:@"resultCode"]] == YES) {
+            result(@(bool_true);
           //3. 调用取号接口，加速授权页的弹起
           [[TXCommonHandler sharedInstance] accelerateLoginPageWithTimeout: 5.0 complete:^(NSDictionary * _Nonnull resultDic) {
             //4. 预取号成功后判断是否延时登录，否则立即登录
@@ -182,6 +184,7 @@ bool bool_false = false;
             }
           }];
         } else {
+            result(@(bool_false);
           NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:checkDic];
           [result setValue:@(bool_false) forKey: @"token"];
           [self showResult: result];

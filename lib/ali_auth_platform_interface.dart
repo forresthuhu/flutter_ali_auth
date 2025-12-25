@@ -80,7 +80,7 @@ abstract class AliAuthPlatform extends PlatformInterface {
     throw UnimplementedError('login() has not been implemented.');
   }
 
-  Future initSdk(AliAuthModel? config) {
+  Future<bool> initSdk(AliAuthModel? config) {
     throw UnimplementedError('login() has not been implemented.');
   }
 

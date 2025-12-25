@@ -43,11 +43,11 @@ class MethodChannelAliAuth extends AliAuthPlatform {
   }
 
   /// 初始化SDK sk 必须
-  /// isDialog 是否使用Dialog 弹窗登录 非必须 默认值false 非Dialog登录
-  /// debug 是否开启调试模式 非必须 默认true 开启
+  /// setAuthSDKInfo 完成鉴权
+  /// checkEnvAvailableWithAuthType 检测环境是否支持号码认证
   /// 使用一键登录传入 SERVICE_TYPE_LOGIN 2  使用号码校验传入 SERVICE_TYPE_AUTH  1 默认值 2
   @override
-  Future<dynamic> initSdk(AliAuthModel? config) async {
+  Future<bool> initSdk(AliAuthModel? config) async {
     config ??= AliAuthModel("", "");
     return await methodChannel.invokeMethod("initSdk", config.toJson());
   }
