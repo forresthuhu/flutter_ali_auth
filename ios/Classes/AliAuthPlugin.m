@@ -201,6 +201,7 @@ bool bool_false = false;
     if ([PNSCodeSuccess isEqualToString:[resultDic objectForKey:@"resultCode"]] == NO) {
         [weakSelf showResult:resultDic];
         [dict setValue: @(bool_false) forKey: @"data"];
+        result(@(bool_false));
     } else {
       [[TXCommonHandler sharedInstance] accelerateLoginPageWithTimeout:5.0 complete:^(NSDictionary * _Nonnull resultDic) {
           /// NSLog(@"为后面授权页拉起加个速，加速结果：%@", resultDic);
@@ -221,6 +222,8 @@ bool bool_false = false;
       [dict setValue: @"终端环境检查⽀持认证" forKey: @"msg"];
       [dict setValue: @"600024" forKey: @"code"];
       [dict setValue: @(bool_true) forKey: @"data"];
+
+      result(@(bool_true));
     }
     [self resultData: dict];
   }];

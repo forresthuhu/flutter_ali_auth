@@ -60,7 +60,7 @@ abstract class AliAuthPlatform extends PlatformInterface {
     throw UnimplementedError('quitPage() has not been implemented.');
   }
 
-  Future<void> checkEnvAvailable() {
+  Future<bool> checkEnvAvailable() {
     throw UnimplementedError('checkEnvAvailable() has not been implemented.');
   }
 

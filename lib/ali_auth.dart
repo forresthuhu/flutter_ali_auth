@@ -60,6 +60,10 @@ class AliAuth {
     return AliAuthPlatform.instance.checkCellularDataEnable;
   }
 
+  static Future<bool> checkEnvAvailable() async {
+    return AliAuthPlatform.instance.checkEnvAvailable();
+  }
+
   /// 苹果登录iOS专用
   static Future<dynamic> get appleLogin async {
     return AliAuthPlatform.instance.appleLogin;

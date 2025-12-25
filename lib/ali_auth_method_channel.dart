@@ -69,7 +69,7 @@ class MethodChannelAliAuth extends AliAuthPlatform {
   /// @see PhoneNumberAuthHelper#SERVICE_TYPE_AUTH  本机号码校验
   /// @see PhoneNumberAuthHelper#SERVICE_TYPE_LOGIN 一键登录校验
   @override
-  Future<void> checkEnvAvailable() async {
+  Future<bool> checkEnvAvailable() async {
     return await methodChannel.invokeMethod('checkEnvAvailable');
   }
 
