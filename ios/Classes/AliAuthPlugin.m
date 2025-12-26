@@ -98,11 +98,7 @@ bool bool_false = false;
   // 初始化SDK
   else if ([@"initSdk" isEqualToString:call.method]) {
     _isHideToast = [call.arguments boolValueForKey: @"isHideToast" defaultValue: NO];
-    if (_eventSink == nil) {
-      result(@{ @"code": @"500001", @"msg": @"请先对插件进行监听！" });
-    } else {
-        [self initSdk: result];
-    }
+    [self initSdk: result];
   }
   // 延时登录获取非延时登录
   else if ([@"login" isEqualToString:call.method]) {
