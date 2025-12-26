@@ -98,7 +98,11 @@ bool bool_false = false;
   // 初始化SDK
   else if ([@"initSdk" isEqualToString:call.method]) {
     _isHideToast = [call.arguments boolValueForKey: @"isHideToast" defaultValue: NO];
-    [self initSdk: result];
+      if (_eventSink == nil) {
+        result(@(bool_false));
+      } else {
+          [self initSdk: result];
+      }
   }
   // 延时登录获取非延时登录
   else if ([@"login" isEqualToString:call.method]) {
