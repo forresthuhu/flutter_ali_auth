@@ -433,7 +433,8 @@ bool bool_false = false;
   NSDictionary *dict = @{
       @"code": [NSString stringWithFormat: @"%@", [showResult objectForKey:@"resultCode"]],
       @"msg" : [AliAuthEnum initData][[showResult objectForKey:@"resultCode"]]?:@"",
-      @"data" : [showResult objectForKey: @"token"]?:@""
+      @"token" : [showResult objectForKey: @"token"]?:@"",
+      @"url" : [showResult objectForKey: @"url"]?:@""
   };
 
   [self resultData: dict];
