@@ -103,6 +103,7 @@ static NSDictionary * StatusAll = nil;
     @"privacyAlertContentVerticalMargin": @"privacyAlertLineSpaceDp",
     @"privacyAlertBtnText": @"privacyAlertBtnContent",
     @"privacyAlertBtnTextSize": @"privacyAlertButtonFont",
+    @"privacyAlertBtnTextColors": @"privacyAlertButtonTextColors",
     @"privacyAlertContentTextSize": @"privacyAlertContentFont",
     @"privacyAlertBtnBackgroundImgPath": @"privacyAlertBtnBackgroundImages",
     @"privacyAlertCloseImagPath": @"privacyAlertCloseButtonImage",

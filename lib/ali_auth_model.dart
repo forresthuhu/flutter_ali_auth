@@ -577,7 +577,7 @@ class AliAuthModel {
   late String? privacyAlertBtnText;
 
   /// 设置按钮文字颜色。
-  late String? privacyAlertBtnTextColor;
+  late List<String>? privacyAlertBtnTextColors;
 
   /// 设置按钮文字大小，默认值18 sp。
   late int? privacyAlertBtnTextSize;
@@ -841,7 +841,7 @@ class AliAuthModel {
     this.privacyAlertBefore,
     this.privacyAlertEnd,
     this.privacyAlertBtnText,
-    this.privacyAlertBtnTextColor,
+    this.privacyAlertBtnTextColors,
     this.privacyAlertBtnTextSize = 18,
     this.privacyAlertBtnWidth,
     this.privacyAlertBtnHeigth,
@@ -1065,7 +1065,7 @@ Map<String, dynamic> _$AliAuthModelToJson(AliAuthModel instance) =>
       'privacyAlertBefore': instance.privacyAlertBefore ?? "",
       'privacyAlertEnd': instance.privacyAlertEnd ?? "",
       'privacyAlertBtnText': instance.privacyAlertBtnText ?? "同意并登录",
-      'privacyAlertBtnTextColor': instance.privacyAlertBtnTextColor,
+      'privacyAlertBtnTextColor': instance.privacyAlertBtnTextColors,
       'privacyAlertBtnTextSize': instance.privacyAlertBtnTextSize ?? 10,
       'privacyAlertBtnWidth': instance.privacyAlertBtnWidth,
       'privacyAlertBtnHeigth': instance.privacyAlertBtnHeigth,
