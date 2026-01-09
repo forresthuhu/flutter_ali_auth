@@ -1065,7 +1065,7 @@ Map<String, dynamic> _$AliAuthModelToJson(AliAuthModel instance) =>
       'privacyAlertBefore': instance.privacyAlertBefore ?? "",
       'privacyAlertEnd': instance.privacyAlertEnd ?? "",
       'privacyAlertBtnText': instance.privacyAlertBtnText ?? "同意并登录",
-      'privacyAlertBtnTextColor': instance.privacyAlertBtnTextColors,
+      'privacyAlertBtnTextColors': instance.privacyAlertBtnTextColors,
       'privacyAlertBtnTextSize': instance.privacyAlertBtnTextSize ?? 10,
       'privacyAlertBtnWidth': instance.privacyAlertBtnWidth,
       'privacyAlertBtnHeigth': instance.privacyAlertBtnHeigth,
