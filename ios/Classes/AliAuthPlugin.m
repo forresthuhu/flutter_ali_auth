@@ -434,7 +434,8 @@ bool bool_false = false;
       @"code": [NSString stringWithFormat: @"%@", [showResult objectForKey:@"resultCode"]],
       @"msg" : [AliAuthEnum initData][[showResult objectForKey:@"resultCode"]]?:@"",
       @"token" : [showResult objectForKey: @"token"]?:@"",
-      @"url" : [showResult objectForKey: @"url"]?:@""
+      @"url" : [showResult objectForKey: @"url"]?:@"",
+      @"urlName" : [showResult objectForKey: @"urlName"]?:@""
   };
 
   [self resultData: dict];
